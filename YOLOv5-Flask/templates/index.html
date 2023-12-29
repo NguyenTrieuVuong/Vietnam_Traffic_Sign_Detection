@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO-Object Detection</title>
+    <link rel="stylesheet" type="text/css" href="../runs/index.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .App {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .App-header {
+            text-align: center;
+            color:#05ee18;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin:0px;
+        }
+
+        .pre_img {
+            margin: 20px 0;
+            height: auto;
+            width: auto;
+        }
+
+        #imagebox {
+            max-width: 100%;
+            height: auto;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Add margin to buttons for spacing */
+        }
+
+        #opencam {
+            background-color: #008CBA; /* Change color for specific button */
+        }
+
+        .line {
+            border: 0.5px solid #ddd;
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        #imageinput {
+            display: none;
+        }
+
+        #sendbutton {
+            background-color: #008CBA;
+        }
+
+        #link {
+            margin-top: 20px;
+        }
+
+        a {
+            color: #008CBA;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Style for detected image */
+        #detectedImage {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #137317;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Add margin to buttons for spacing */
+            transition: background-color 0.3s ease; /* Transition effect for background color */
+        }
+
+        .button:hover {
+            background-color: #05ee18; /* Change color on hover */
+        }
+
+        #opencam {
+            background-color: #ab9512; /* Change color for specific button */
+        }
+        #opencam:hover {
+            background-color: #e7c80d; /* Change color on hover */
+        }
+
+        #sendbutton {
+            background-color: #008CBA;
+        }
+        #sendbutton:hover {
+            background-color: #0ed8f3; /* Change color on hover */
+        }
+        #download {
+            color: #008CBA; /* Default text color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Transition effect for color change */
+        }
+        #download:hover {
+            color: #0ed8f3; /* Change text color on hover */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../runs/index.js"></script>
+</head>
+<body>
+    <div class="App">
+        <header class="App-header">
+            <h3>Nhóm 10 - Computer Vision Project Final Term</h3>
+            <u>Nhận diện biển báo giao thông sử dụng YOLOv5 </u>
+            <div class="pre_img">
+                <span><img id="imagebox" src="" /></span>
+            </div>
+            <!-- <video width="320" height="240" controls>
+                <source src="/static/video_1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video> -->
+            <button name="cam" class="button" id="opencam">Video Cam</button>
+            <br/>
+            <hr class="line" />
+            <!-- <form>
+                <label for="imageinput" class="button">Choose Image</label>
+                <input id="imageinput" type="file" name="image" onchange="readUrl(this)" />
+            </form> -->
+            <form>
+                <label for="imageinput" class="button">Choose Image</label>
+                <input id="imageinput" type="file" name="image" onchange="readUrl(this)" />
+            </form>
+
+            <button name="send" class="button" id="sendbutton">Send</button>
+            <br/>
+            <div id="link">
+                <!-- <a href="" id="viewimage" target="_blank">View Image</a> -->
+                
+                <p><a href="" id="download" download><i class="fa fa-download" aria-hidden="true"></i> Download ảnh đã xử lý</a></p>
+                <label><span style="font-size: 20px;">Tên của đối tượng:</span></label>
+                <p><input id="labels"></input></p>
+            </div>
+           
+            <img id="detectedImage" style="max-width: 100%; margin-top: 20px;" />
+        </header>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
+
